@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+.clk{
+    color: rgb(253,134,91);
+}
+	</style>
+</head>
+<body>
+               <ul class="leftMenu">
+				  <li id="LiA" class="" onclick="selLi('LiA')">
+					  <img src="img/productLeftIco.png">&nbsp;&nbsp;&nbsp;&nbsp;主营产品
+				  </li>
+				  <li id="LiB" class="" onclick="selLi('LiB')">
+					  <img src="img/productLeftIco.png">&nbsp;&nbsp;&nbsp;&nbsp;增值服务
+				  </li>
+				  <li id="LiC" class="" onclick="selLi('LiC')">
+					  <img src="img/productLeftIco.png">&nbsp;&nbsp;&nbsp;&nbsp;市场活动
+				  </li>
+				  <li id="LiD" class="" onclick="selLi('LiD')">
+					  <img src="img/productLeftIco.png">&nbsp;&nbsp;&nbsp;&nbsp;危化品运输
+				  </li>
+			  </ul>
+	<script type="application/javascript">
+     function selLi(lId){
+         document.getElementById("LiA").className = "";
+         document.getElementById("LiB").className = "";
+         document.getElementById("LiC").className = "";
+         document.getElementById("LiD").className = "";
+         document.getElementById(lId).className = "clk";
+     }
+ </script>
+</body>
+</html>

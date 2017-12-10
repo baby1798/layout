@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+         div{
+            width:300px;
+            height:auto;
+            border:1px solid #f00; 
+            overflow:auto;  
+         }
+         div>h3{
+            width:300px;
+            height:30px;
+            font-size:14px;
+            line-height:30px;
+            border:1px solid #00f;
+          /*  background: rgba(200,200,0,0.3);*/
+         }
+         div>h3.l{
+            height:30px;
+            width:auto;
+            float:left;
+            display:block;
+ 
+         }
+         div>h3>.r1{
+            width:0px;
+            height:0px;
+            border-top:6px solid #fff;
+            border-bottom:6px solid #fff;
+            border-left:6px solid #000;
+            position:relative;
+            margin-left:20px;
+            margin-right:10px;
+            float:left;
+            display:block;
+            margin-top:9px;
+
+         }
+        div>h3>.r2{
+            width:0px;
+            height:0px;
+            border-top:6px solid #000;
+            border-right:6px solid #fff;
+            border-left:6px solid #fff;
+            position:relative;
+            margin-left:20px;
+            margin-right:10px;
+            float:left;
+            display:block;
+            margin-top:9px;
+         }
+         div>ul{
+            display:none;
+         }
+         div>ul.show{
+            display: block;
+         }
+    </style>
+</head>
+<body>
+      <div class="show">
+          <h3><span class="l">压瓦机产品</span><span class="r1"></span></h3>
+          <ul>
+              <li>琉璃瓦</li>
+              <li>玻璃瓦</li>
+              <li>压瓦机</li>
+              <li>玻璃瓦</li>
+              <li>压瓦机</li>
+          </ul>
+      </div>
+      <div>
+          <h3><span class="l">工艺品产品</span><span class="r1"></span></h3>
+          <ul>
+              <li>木雕</li>
+              <li>陶瓷</li>
+              <li>沙画</li>
+              <li>刺绣</li>
+              <li>古玩</li>
+          </ul>
+      </div>
+      <div>
+          <h3><span class="l">护肤产品</span><span class="r1"></span></h3>
+          <ul>
+              <li>面膜</li>
+              <li>洗面奶</li>
+              <li>沐浴露</li>
+              <li>洗发水</li>
+              <li>眼霜</li>
+          </ul>
+      </div>
+      <script type="text/javascript">
+         var ds=document.getElementsByTagName("div");
+         for(var i=0;i<ds.length;i++){
+            ds[i].children[0].onclick=function(){
+                if(this.parentNode.children[1].getAttribute("class")=="show"){
+                    this.parentNode.children[1].setAttribute("class","");
+                    this.children[1].setAttribute("class","r1")
+                }else{
+                    this.parentNode.children[1].setAttribute("class","show")
+                    this.children[1].setAttribute("class","r2")
+                }
+            }
+         }
+      </script>
+</body>
+</html>

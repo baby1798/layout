@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+         div{
+            width:300px;
+            height:auto;
+            overflow:auto;/*如果里面有其他内容或者是浮动加上它*/   
+         }
+         div>h3{   /*div下面的儿子h3*/
+            width:300px;
+            height:30px;
+            font-size:14px;   /*h3字体本身是粗体*/ 
+            line-height:30px;
+            overflow: auto;
+         }
+         div>h3.l{
+            height:30px;
+            width:auto;
+            float:left;
+            display:block;
+         }
+         div>h3>.r1{
+            width:0px;
+            height:0px;
+            border-top:10px solid #fff;
+            border-bottom:10px solid #fff;
+            border-left:10px solid #000;
+            position:relative;
+            float:right;
+            display:block;
+            margin-top:5px;
+         }
+        div>h3>.r2{
+            width:0px;
+            height:0px;
+            border-top:10px solid #000;
+            border-right:10px solid #fff;
+            border-left:10px solid #fff;
+            position:relative;
+            float:right;
+            display:block;
+            margin-top:5px;
+         }
+         div>ul{
+            display:none;  /*内容和位置一起隐藏*/
+         }
+         div>ul.show{
+            display: block;/*单击显示*/
+         }
+    </style>
+</head>
+<body>
+      <div class="show">
+          <h3><span class="l">压瓦机产品</span><span class="r1"></span></h3>
+          <ul>
+              <li>琉璃瓦</li>
+              <li>玻璃瓦</li>
+              <li>压瓦机</li>
+              <li>玻璃瓦</li>
+              <li>压瓦机</li>
+          </ul>
+      </div>
+      <div>
+          <h3><span class="l">工艺品产品</span><span class="r1"></span></h3>
+          <ul>
+              <li>木雕</li>
+              <li>陶瓷</li>
+              <li>沙画</li>
+              <li>刺绣</li>
+              <li>古玩</li>
+          </ul>
+      </div>
+      <div>
+          <h3><span class="l">护肤产品</span><span class="r1"></span></h3>
+          <ul>
+              <li>面膜</li>
+              <li>洗面奶</li>
+              <li>沐浴露</li>
+              <li>洗发水</li>
+              <li>眼霜</li>
+          </ul>
+      </div>
+      <script type="text/javascript">
+         var ds=document.getElementsByTagName("div");//ds是所有的div
+         for(var i=0;i<ds.length;i++){  //循环遍历
+            ds[i].children[0].onclick=function(){  //每个div.div里面的第一个.事件
+                if(this.parentNode.children[1].getAttribute("class")=="show"){
+                      //父亲下的第二个孩子，获取值是否是show。可以用className=空
+                    this.parentNode.children[1].setAttribute("class","");
+                    this.children[1].setAttribute("class","r1")
+                }else{
+                    this.parentNode.children[1].setAttribute("class","show")
+                    this.children[1].setAttribute("class","r2")
+               }
+            }
+         }
+      </script>
+</body>
+</html>
